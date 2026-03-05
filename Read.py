@@ -21,7 +21,7 @@ def read_epr(filename, path="./"):
                 return val
 
     # Build the full file path
-    filepath = os.path.join(path, filename)
+    filepath = os.path.join(path, filename + ".csv")
     
     # Read the file lines, skipping empty lines
     with open(filepath, "r", encoding="utf-8") as f:
