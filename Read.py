@@ -23,15 +23,17 @@ def read_epr(filename, path="./"):
     # Build the full file path
     filepath = os.path.join(path, filename + ".csv")
     
-    # Read the file lines, skipping empty lines
+    # Read all lines
     with open(filepath, "r", encoding="utf-8") as f:
         lines = [line.strip() for line in f if line.strip()]
     
-    # Initialize dictionaries and dataframe
+    # Initialize dictionaries and storage
     params = {}
     param_blocks = {}
     df_meas = None
     block = None
+    meas_rows = []  # store Meas rows temporarily
+    meas_header = None
     
     for line in lines:
         # Detect block changes
@@ -50,13 +52,15 @@ def read_epr(filename, path="./"):
                 
         # Read experimental data
         elif block == "Meas":
-            # The first line in Meas is the header
-            if df_meas is None:
-                df_meas = pd.DataFrame(columns=line.split(";"))
+            if meas_header is None:
+                meas_header = line.split(";")
             else:
-                values = [parse_value(v) for v in line.split(";")]
-                df_meas.loc[len(df_meas)] = values
-
+                values = [float(v) for v in line.split(";")]
+                meas_rows.append(values)
+    
+    # Create DataFrame from accumulated Meas rows
+    df_meas = pd.DataFrame(meas_rows, columns=meas_header)
+    
     # Add attributes to the dataframe
     df_meas.attrs["name"] = filename
     df_meas.attrs["params"] = params

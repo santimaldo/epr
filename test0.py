@@ -2,7 +2,7 @@
 from Read import read_epr
 import matplotlib.pyplot as plt
 import os
-path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-01-08_Rui_pulsed-charged\01_next-day_beforeDNP/"
+path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-01-08_Rui_pulsed-charged\01_next-day_beforeDNP"
 # df = read_epr("20260108_190256036_sm2974_Li-KBr_range-330-345mT_mod0.1mT_power0.1mW_01_pow_0_0519mW", path=path)
 # fig, ax = plt.subplots()
 # B = df["BField [mT]"]
