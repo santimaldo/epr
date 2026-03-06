@@ -1,4 +1,4 @@
-from Read import read_epr
+from EPR import read_epr
 import matplotlib.pyplot as plt
 import os
 
@@ -48,13 +48,21 @@ def get_spec_names(folder_path="./", normalize=False, Brange=None):
 
 if __name__ == "__main__":
 
-    # PC
-    path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-01-08_Rui_pulsed-charged\01_next-day_beforeDNP"
-    normalize = True
-    Brange = [335, 337]
+    # # PC
+    # path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-01-08_Rui_pulsed-charged\01_next-day_beforeDNP"
+    # normalize = True
+    # Brange = [335, 337]
 
-    # CC
-    path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2025-11-13_Rui\01_CCsample_beforeDNP"
+    # # CC
+    # path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2025-11-13_Rui\01_CCsample_beforeDNP"
+    # normalize = False # True
+    # Brange = [335, 337]
+
+    # path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-01-08_Rui_pulsed-charged\03_tuesday-13-01_beforeDNP"
+    # normalize = False # True
+    # Brange = [335, 337]
+
+    path = r"C:\Users\Santi\OneDrive - University of Cambridge\EPRdata\2026-02_InSitu\00_Li-Cu_edge"
     normalize = False # True
     Brange = [335, 337]
 
