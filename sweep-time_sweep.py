@@ -114,13 +114,13 @@ ax.set_xlabel("Sweep time [s]")
 ax.set_ylabel("A / B")
 fig.tight_layout()
 
-# ------------------------------------------------------------
+#%%------------------------------------------------------------
 # DeltaBpp vs Sweep time
 # ------------------------------------------------------------
 fig, ax = plt.subplots()
 ax.plot(sweep_times, DeltaBpp, "o-")
 ax.set_xlabel("Sweep time [s]")
-ax.set_ylabel("DeltaBpp [mT]")
+ax.set_ylabel(r"$\Delta$B$_{pp}$ [mT]")
 fig.tight_layout()
 
 #%%------------------------------------------------------------
